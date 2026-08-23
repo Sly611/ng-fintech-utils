@@ -20,7 +20,7 @@ You don't need any API keys or authentication headers to get started. You can qu
 async function fetchBanks() {
   try {
     const response = await fetch(
-      "[https://your-vercel-project.vercel.app/api/banks](https://your-vercel-project.vercel.app/api/banks)",
+      "[https://ng-fintech-utils.vercel.app/api/banks](https://ng-fintech-utils.vercel.app/api/banks)",
     );
     const result = await response.json();
 
@@ -94,7 +94,7 @@ To ensure high availability and prevent abuse on the free tier, this API is rate
 ## 🐍 Python Package Alternative
 
 Are you building in Python? Check out our official companion package:
-👉 [ng-fintech-utils on PyPI](https://pypi.org/project/ng-fintech-utils/) (Install via `pip install ng_fintech_utils`)
+👉 [ng_fintech_utils on PyPI](https://pypi.org/project/ng-fintech-utils/0.1.0/) (Install via `pip install ng_fintech_utils`)
 
 ---
 
