@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Access Bank",
+    "slug": "access-bank",
+    "code": "044",
+    "ussd": "*901#",
+    "type": "commercial"
+  },
+  {
+    "name": "Guaranty Trust Bank",
+    "slug": "gtb",
+    "code": "058",
+    "ussd": "*737#",
+    "type": "commercial"
+  },
+  {
+    "name": "Zenith Bank",
+    "slug": "zenith-bank",
+    "code": "057",
+    "ussd": "*966#",
+    "type": "commercial"
+  },
+  {
+    "name": "United Bank for Africa",
+    "slug": "uba",
+    "code": "033",
+    "ussd": "*919#",
+    "type": "commercial"
+  }
+]
