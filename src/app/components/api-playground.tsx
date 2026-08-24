@@ -1,9 +1,17 @@
 "use client";
 
-import { Check, Copy, Loader2, Play, Terminal } from "lucide-react";
+import {
+  Check,
+  Copy,
+  ExternalLink,
+  Loader2,
+  Play,
+  Terminal,
+} from "lucide-react";
 import { useState } from "react";
 
 const BASE_URL = "https://ng-fintech-utils.vercel.app";
+
 const endpoints = [
   {
     value: "/api/banks",
@@ -51,6 +59,7 @@ export default function ApiPlayground() {
 
       setStatus(500);
       setLatency(Math.round(endTime - startTime));
+
       setResponse(
         JSON.stringify(
           {
@@ -81,8 +90,7 @@ export default function ApiPlayground() {
 
   return (
     <section id="sandbox" className="scroll-mt-24 border-b border-white/[0.08]">
-      <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-        {/* Section heading */}
+      <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
         <div className="mb-10 flex flex-col justify-between gap-5 border-b border-white/[0.08] pb-6 sm:flex-row sm:items-end">
           <div>
             <div className="mb-3 text-[9px] uppercase tracking-[0.2em] text-white/25">
@@ -99,23 +107,49 @@ export default function ApiPlayground() {
           </div>
         </div>
 
-        {/* Console */}
         <div className="border border-white/[0.11] bg-[#0b0b0b]">
-          {/* Request bar */}
-          <div className="border-b border-white/[0.08] p-3 sm:p-4">
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <div className="flex h-10 flex-1 items-center border border-white/[0.08] bg-black">
-                <div className="flex h-full items-center border-r border-white/[0.08] px-4 text-[10px] font-medium text-blue-400">
-                  GET
+          <div className="border-b border-white/[0.08] px-4 py-3 sm:px-5">
+            <div className="flex min-w-0 items-center justify-between gap-4">
+              <div className="flex min-w-0 items-center gap-3">
+                <span className="shrink-0 text-[9px] uppercase tracking-[0.16em] text-white/25">
+                  BASE_URL
+                </span>
+
+                <span className="h-3 w-px shrink-0 bg-white/[0.1]" />
+
+                <span className="truncate font-mono text-[10px] text-white/45 sm:text-[11px]">
+                  {BASE_URL}
+                </span>
+              </div>
+
+              <a
+                href={BASE_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open API"
+                className="shrink-0 text-white/20 transition-colors hover:text-white/60"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </div>
+          </div>
+
+          <div className="p-3 sm:p-4">
+            <div className="flex flex-col gap-3 lg:flex-row">
+              <div className="flex min-w-0 flex-1 border border-white/[0.08] bg-black">
+                <div className="flex h-11 shrink-0 items-center border-r border-white/[0.08] px-3 sm:px-4">
+                  <span className="text-[10px] font-medium text-blue-400">
+                    GET
+                  </span>
                 </div>
 
                 <div className="flex min-w-0 flex-1 items-center">
-                  <span className="px-3 text-xs text-white/25">/</span>
+                  <span className="px-3 text-xs text-white/20">/</span>
 
                   <select
                     value={endpoint}
                     onChange={(e) => setEndpoint(e.target.value)}
-                    className="h-full w-full appearance-none bg-transparent pr-3 font-mono text-xs text-white/75 outline-none"
+                    className="h-11 min-w-0 w-full appearance-none bg-transparent pr-3 font-mono text-[11px] text-white/70 outline-none"
                   >
                     {endpoints.map((item) => (
                       <option
@@ -133,7 +167,7 @@ export default function ApiPlayground() {
               <button
                 onClick={handleRunRequest}
                 disabled={loading}
-                className="flex h-10 items-center justify-center gap-2 rounded-lg bg-white px-5 text-xs font-medium text-black transition-colors hover:bg-blue-500 hover:text-white disabled:opacity-40 sm:w-auto"
+                className="flex h-11 items-center justify-center gap-2 rounded-lg bg-white px-5 text-[10px] font-medium tracking-[0.08em] text-black transition-colors hover:bg-blue-500 hover:text-white disabled:opacity-40 lg:w-auto"
               >
                 {loading ? (
                   <>
@@ -150,10 +184,9 @@ export default function ApiPlayground() {
             </div>
           </div>
 
-          {/* Response */}
-          <div className="p-4 sm:p-6">
+          <div className="border-t border-white/[0.08] p-4 sm:p-6">
             <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.12em] text-white/35">
                   <Terminal className="h-3.5 w-3.5" />
                   RESPONSE
@@ -206,6 +239,7 @@ export default function ApiPlayground() {
                         {"\n"}
                         // a live API request.
                       </span>
+
                       <span className="cursor-blink ml-1 text-blue-400">_</span>
                     </>
                   )}
@@ -214,7 +248,6 @@ export default function ApiPlayground() {
             </div>
           </div>
 
-          {/* Console footer */}
           <div className="flex flex-col gap-2 border-t border-white/[0.08] px-4 py-3 text-[9px] uppercase tracking-[0.12em] text-white/20 sm:flex-row sm:items-center sm:justify-between">
             <span>ENDPOINT / {selectedEndpoint?.description}</span>
 

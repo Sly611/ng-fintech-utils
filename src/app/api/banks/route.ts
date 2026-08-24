@@ -6,6 +6,7 @@ export async function GET(request: NextRequest) {
   try {
     const forwardedFor = request.headers.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "127.0.0.1";
+    console.log(ip);
     const { success, limit, reset, remaining } = await ratelimit.limit(ip);
     if (!success) {
       return NextResponse.json(
@@ -40,10 +41,11 @@ export async function GET(request: NextRequest) {
       },
     );
   } catch (error) {
+    console.log(error);
     return NextResponse.json(
       {
         success: false,
-        error: "failed to fetch banks",
+        error: `failed to fetch banks ${error}`,
       },
       { status: 500 },
     );

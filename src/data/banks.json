@@ -101,7 +101,7 @@
     "name": "Jaiz Bank",
     "slug": "jaiz-bank",
     "code": "301",
-    "ussd": "*773#",
+    "ussd": "*389*301#",
     "type": "commercial"
   },
   {
@@ -137,6 +137,83 @@
     "slug": "moniepoint",
     "code": "50515",
     "ussd": "*5573#",
+    "type": "digital"
+  },
+  {
+    "name": "Providus Bank",
+    "slug": "providus-bank",
+    "code": "101",
+    "ussd": null,
+    "type": "commercial"
+  },
+  {
+    "name": "Unity Bank",
+    "slug": "unity-bank",
+    "code": "215",
+    "ussd": "*7799#",
+    "type": "commercial"
+  },
+  {
+    "name": "SunTrust Bank",
+    "slug": "suntrust-bank",
+    "code": "100",
+    "ussd": null,
+    "type": "commercial"
+  },
+  {
+    "name": "Globus Bank",
+    "slug": "globus-bank",
+    "code": "00103",
+    "ussd": null,
+    "type": "commercial"
+  },
+  {
+    "name": "Parallex Bank",
+    "slug": "parallex-bank",
+    "code": "526",
+    "ussd": null,
+    "type": "commercial"
+  },
+  {
+    "name": "Titan Trust Bank",
+    "slug": "titan-trust-bank",
+    "code": "102",
+    "ussd": null,
+    "type": "commercial"
+  },
+  {
+    "name": "Premium Trust Bank",
+    "slug": "premium-trust-bank",
+    "code": "105",
+    "ussd": null,
+    "type": "commercial"
+  },
+  {
+    "name": "Signature Bank",
+    "slug": "signature-bank",
+    "code": "106",
+    "ussd": null,
+    "type": "commercial"
+  },
+  {
+    "name": "VFD Microfinance Bank",
+    "slug": "vfd-microfinance-bank",
+    "code": "566",
+    "ussd": "*5049#",
+    "type": "digital"
+  },
+  {
+    "name": "Rubies Bank",
+    "slug": "rubies-bank",
+    "code": "125",
+    "ussd": null,
+    "type": "digital"
+  },
+  {
+    "name": "Carbon",
+    "slug": "carbon",
+    "code": "565",
+    "ussd": null,
     "type": "digital"
   }
 ]

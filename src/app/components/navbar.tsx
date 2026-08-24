@@ -13,7 +13,7 @@ export default function Navbar() {
           </div>
 
           <span className="text-sm font-medium tracking-tight text-white">
-            NG_FINTECH_UTILS
+            FINTECH_UTILS
           </span>
         </a>
 
@@ -33,7 +33,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="https://github.com/Sly611/ng-fintech-api"
+            href="https://github.com/Sly611/ng-fintech-utils"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"

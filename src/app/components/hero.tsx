@@ -1,59 +1,92 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import TechnicalArt from "./technical-art";
 
 export default function Hero() {
   return (
     <header className="relative overflow-hidden border-b border-white/[0.08]">
-      <div className="absolute inset-0 tech-grid opacity-40" />
+      <div className="absolute inset-0 tech-grid opacity-30" />
       <div className="absolute inset-0 hero-glow" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[1fr_1fr] lg:px-8 lg:py-16">
-        <div className="max-w-2xl">
-          <div className="mb-8 inline-flex items-center gap-3 border border-white/[0.12] bg-white/[0.02] px-3 py-2 text-[10px] uppercase tracking-[0.15em] text-white/50">
-            <span className="status-pulse h-1.5 w-1.5 rounded-full bg-blue-500" />
-            V0.1.0 / SANDBOX_LIVE
+      <div className="relative mx-auto grid min-h-[620px] max-w-7xl grid-cols-1 items-center gap-16 px-6 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
+        <div className="relative z-10 max-w-xl">
+          <div className="mb-7 flex items-center gap-3">
+            <span className="flex items-center gap-2 border border-white/[0.1] bg-white/[0.02] px-3 py-1.5 text-[9px] uppercase tracking-[0.18em] text-white/45">
+              <span className="status-pulse h-1.5 w-1.5 rounded-full bg-blue-500" />
+              API / V0.1.0
+            </span>
+
+            <span className="text-[9px] uppercase tracking-[0.18em] text-white/20">
+              SANDBOX LIVE
+            </span>
           </div>
 
-          <h1 className="max-w-3xl text-2xl font-medium leading-[1.05] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl">
-            Nigerian bank data,
+          <h1 className="text-4xl font-medium leading-[1.08] tracking-[-0.055em] text-white sm:text-5xl lg:text-[4rem]">
+            The data layer for
             <br />
-            <span className="text-white/35">served instantly.</span>
+            <span className="text-white/35">Nigerian fintech.</span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-xs leading-7 text-white/45 sm:text-base">
-            A fast, developer-first REST API for Nigerian fintech applications.
-            Access structured bank data, routing information and USSD utilities
-            with zero configuration.
+          <p className="mt-7 max-w-lg text-xs leading-7 text-white/40 sm:text-sm">
+            Access Nigerian bank data through a simple, developer-first REST
+            API. Bank codes, routing data, USSD utilities and more, ready when
+            you need them.
           </p>
 
-          <div className="mt-5 flex flex-wrap items-center gap-4">
+          {/* Actions */}
+          <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#sandbox"
-              className="group flex h-10 items-center gap-3 rounded-lg bg-white px-5 text-xs font-medium text-black transition-colors hover:bg-blue-500 hover:text-white"
+              className="group flex h-10 items-center gap-3 rounded-lg bg-white px-5 text-[10px] font-medium tracking-[0.08em] text-black transition-all hover:bg-blue-500 hover:text-white"
             >
-              OPEN_PLAYGROUND
+              EXPLORE API
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </a>
 
             <a
-              href="https://github.com/Sly611/ng-fintech-api"
+              href="https://github.com/Sly611/ng-fintech-utils"
               target="_blank"
               rel="noreferrer"
-              className="flex h-10 items-center gap-3 rounded-lg border border-white/[0.12] px-5 text-xs text-white/60 transition-colors hover:border-white/25 hover:text-white"
+              className="group flex h-10 items-center gap-2 rounded-lg border border-white/[0.1] px-5 text-[10px] tracking-[0.08em] text-white/50 transition-colors hover:border-white/20 hover:text-white"
             >
-              VIEW_SOURCE
+              VIEW SOURCE
+              <ExternalLink className="h-3 w-3 opacity-50 transition-opacity group-hover:opacity-100" />
             </a>
           </div>
 
-          <div className="mt-12 flex items-center gap-6 border-t border-white/[0.08] pt-5 text-[9px] uppercase tracking-[0.15em] text-white/25">
-            <span>REST API</span>
-            <span>JSON</span>
-            <span>EDGE READY</span>
-            <span>MIT</span>
+          <div className="mt-14 flex max-w-md items-center border-t border-white/[0.08] pt-5">
+            <div className="flex flex-1 items-center gap-3">
+              <span className="text-[9px] text-white/20">01</span>
+              <span className="h-px w-6 bg-white/[0.12]" />
+              <span className="text-[9px] uppercase tracking-[0.16em] text-white/25">
+                REST
+              </span>
+            </div>
+
+            <div className="flex flex-1 items-center gap-3">
+              <span className="text-[9px] text-white/20">02</span>
+              <span className="h-px w-6 bg-white/[0.12]" />
+              <span className="text-[9px] uppercase tracking-[0.16em] text-white/25">
+                JSON
+              </span>
+            </div>
+
+            <div className="hidden flex-1 items-center gap-3 sm:flex">
+              <span className="text-[9px] text-white/20">03</span>
+              <span className="h-px w-6 bg-white/[0.12]" />
+              <span className="text-[9px] uppercase tracking-[0.16em] text-white/25">
+                EDGE
+              </span>
+            </div>
           </div>
         </div>
 
-        <TechnicalArt />
+        <div>
+          <TechnicalArt />
+        </div>
+      </div>
+
+      <div className="absolute bottom-5 right-8 hidden text-[8px] uppercase tracking-[0.2em] text-white/15 lg:block">
+        NG / 09.0820 / 08.6753
       </div>
     </header>
   );
