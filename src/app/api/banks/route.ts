@@ -6,8 +6,15 @@ export async function GET(request: NextRequest) {
   try {
     const forwardedFor = request.headers.get("x-forwarded-for");
     const ip = forwardedFor ? forwardedFor.split(",")[0].trim() : "127.0.0.1";
-    console.log(ip);
+
     const { success, limit, reset, remaining } = await ratelimit.limit(ip);
+
+    const rateLimitHeaders = {
+      "X-RateLimit-Limit": limit.toString(),
+      "X-RateLimit-Remaining": remaining.toString(),
+      "X-RateLimit-Reset": reset.toString(),
+    };
+
     if (!success) {
       return NextResponse.json(
         {
@@ -17,14 +24,11 @@ export async function GET(request: NextRequest) {
         },
         {
           status: 429,
-          headers: {
-            "X-RateLimit-Limit": limit.toString(),
-            "X-RateLimit-Remaining": remaining.toString(),
-            "X-RateLimit-Reset": reset.toString(),
-          },
+          headers: rateLimitHeaders,
         },
       );
     }
+
     return NextResponse.json(
       {
         success: true,
@@ -33,19 +37,16 @@ export async function GET(request: NextRequest) {
       },
       {
         status: 200,
-        headers: {
-          "X-RateLimit-Limit": limit.toString(),
-          "X-RateLimit-Remaining": remaining.toString(),
-          "X-RateLimit-Reset": reset.toString(),
-        },
+        headers: rateLimitHeaders,
       },
     );
   } catch (error) {
-    console.log(error);
+    console.error("GET /api/banks failed:", error);
+
     return NextResponse.json(
       {
         success: false,
-        error: `failed to fetch banks ${error}`,
+        error: "Failed to fetch banks. Please try again later.",
       },
       { status: 500 },
     );
