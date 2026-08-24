@@ -1,6 +1,6 @@
-# 🇳🇬 NG Fintech Utils API
+# NG Fintech Utils API
 
-A lightweight, blazing-fast, and free REST API for Nigerian fintech developers. Easily access structured data for commercial banks, NUBAN/sorting codes, and USSD strings without setting up heavy database infrastructure.
+A lightweight, fast, and free REST API for Nigerian fintech developers. Easily access structured data for commercial banks, NUBAN/sorting codes, and USSD strings without setting up heavy database infrastructure.
 
 ---
 
@@ -93,8 +93,8 @@ To ensure high availability and prevent abuse on the free tier, this API is rate
 
 ## 🐍 Python Package Alternative
 
-Are you building in Python? Check out our official companion package:
-👉 [ng_fintech_utils on PyPI](https://pypi.org/project/ng-fintech-utils/0.1.0/) (Install via `pip install ng_fintech_utils`)
+If you are building in Python? Check out our official companion package:
+[ng_fintech_utils on PyPI](https://pypi.org/project/ng-fintech-utils/0.1.0/) (Install via `pip install ng_fintech_utils`)
 
 ---
 

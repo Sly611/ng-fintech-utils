@@ -1,15 +1,157 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080808;
+  --foreground: #ededed;
+
+  --surface: #0d0d0d;
+  --surface-hover: #111111;
+
+  --border: rgba(255, 255, 255, 0.11);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  --muted: #737373;
+  --muted-foreground: #a1a1a1;
+
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+
+  --danger: #ef4444;
+  --success: #22c55e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: monospace;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.25);
+  color: #fff;
+}
+
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* Technical grid */
+
+.tech-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+}
+
+/* Subtle radial light used behind the hero */
+
+.hero-glow {
+  background:
+    radial-gradient(
+      circle at 70% 40%,
+      rgba(59, 130, 246, 0.08),
+      transparent 32%
+    );
+}
+
+/* Thin technical line */
+
+.scan-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+}
+
+/* Hide scrollbar while keeping scrolling */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Blinking cursor */
+
+.cursor-blink {
+  animation: blink 1.1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Small pulse used for live status */
+
+.status-pulse {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slow technical artwork rotation */
+
+.tech-rotate {
+  animation: tech-rotate 30s linear infinite;
+}
+
+@keyframes tech-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,9 +160,9 @@
     --foreground: #ededed;
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans);
 }

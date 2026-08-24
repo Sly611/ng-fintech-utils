@@ -8,7 +8,7 @@
   },
   {
     "name": "Guaranty Trust Bank",
-    "slug": "gtb",
+    "slug": "gtbank",
     "code": "058",
     "ussd": "*737#",
     "type": "commercial"
@@ -26,5 +26,117 @@
     "code": "033",
     "ussd": "*919#",
     "type": "commercial"
+  },
+  {
+    "name": "First Bank of Nigeria",
+    "slug": "first-bank",
+    "code": "011",
+    "ussd": "*894#",
+    "type": "commercial"
+  },
+  {
+    "name": "First City Monument Bank",
+    "slug": "fcmb",
+    "code": "214",
+    "ussd": "*329#",
+    "type": "commercial"
+  },
+  {
+    "name": "Fidelity Bank",
+    "slug": "fidelity-bank",
+    "code": "070",
+    "ussd": "*770#",
+    "type": "commercial"
+  },
+  {
+    "name": "Wema Bank",
+    "slug": "wema-bank",
+    "code": "035",
+    "ussd": "*945#",
+    "type": "commercial"
+  },
+  {
+    "name": "Sterling Bank",
+    "slug": "sterling-bank",
+    "code": "232",
+    "ussd": "*822#",
+    "type": "commercial"
+  },
+  {
+    "name": "Stanbic IBTC Bank",
+    "slug": "stanbic-ibtc",
+    "code": "039",
+    "ussd": "*909#",
+    "type": "commercial"
+  },
+  {
+    "name": "Union Bank of Nigeria",
+    "slug": "union-bank",
+    "code": "032",
+    "ussd": "*826#",
+    "type": "commercial"
+  },
+  {
+    "name": "Ecobank Nigeria",
+    "slug": "ecobank",
+    "code": "050",
+    "ussd": "*326#",
+    "type": "commercial"
+  },
+  {
+    "name": "Polaris Bank",
+    "slug": "polaris-bank",
+    "code": "076",
+    "ussd": "*833#",
+    "type": "commercial"
+  },
+  {
+    "name": "Keystone Bank",
+    "slug": "keystone-bank",
+    "code": "082",
+    "ussd": "*7111#",
+    "type": "commercial"
+  },
+  {
+    "name": "Jaiz Bank",
+    "slug": "jaiz-bank",
+    "code": "301",
+    "ussd": "*773#",
+    "type": "commercial"
+  },
+  {
+    "name": "TAJ Bank",
+    "slug": "taj-bank",
+    "code": "302",
+    "ussd": "*898#",
+    "type": "commercial"
+  },
+  {
+    "name": "Kuda Bank",
+    "slug": "kuda-bank",
+    "code": "50211",
+    "ussd": "*5563#",
+    "type": "digital"
+  },
+  {
+    "name": "OPay",
+    "slug": "opay",
+    "code": "999992",
+    "ussd": "*955#",
+    "type": "digital"
+  },
+  {
+    "name": "PalmPay",
+    "slug": "palmpay",
+    "code": "999991",
+    "ussd": "*861#",
+    "type": "digital"
+  },
+  {
+    "name": "Moniepoint Microfinance Bank",
+    "slug": "moniepoint",
+    "code": "50515",
+    "ussd": "*5573#",
+    "type": "digital"
   }
 ]
